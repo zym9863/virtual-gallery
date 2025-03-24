@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebXR 虚拟画廊</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+    }
+    
+    #canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    #info {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      pointer-events: none;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    
+    #vr-button {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    #vr-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      z-index: 1000;
+    }
+    
+    .artwork-info {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 20px;
+      border-radius: 2px;
+      max-width: 320px;
+      display: none;
+      backdrop-filter: blur(10px);
+      border-left: 2px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .artwork-info h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+    
+    .artwork-info p {
+      margin: 8px 0;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">加载中，请稍候...</div>
+  <div id="info">WebXR 虚拟画廊 - 使用鼠标拖动查看，WASD移动</div>
+  <div id="artwork-info" class="artwork-info">
+    <h3 id="artwork-title">艺术品标题</h3>
+    <p><strong>艺术家:</strong> <span id="artwork-artist">艺术家名称</span></p>
+    <p><strong>年份:</strong> <span id="artwork-year">创作年份</span></p>
+    <p id="artwork-description">艺术品描述...</p>
+  </div>
+  <canvas id="canvas"></canvas>
+  <button id="vr-button" style="display: none;">进入VR</button>
+  
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
