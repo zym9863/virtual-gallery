@@ -30,4 +30,52 @@
 
 1. 克隆或下载此仓库
 2. 安装依赖
+   ```bash
+   npm install
    ```
+
+3. 启动开发服务器
+   ```bash
+   npm run dev
+   ```
+
+4. 在浏览器中访问显示的URL（通常是 http://localhost:5173）
+
+### 使用说明
+
+#### 普通模式
+- 使用鼠标左键点击并拖动来旋转视角
+- 使用鼠标滚轮来缩放
+- 使用W、A、S、D键来移动
+- 按ESC键退出VR模式
+
+#### VR模式
+- 点击右下角的VR按钮进入VR模式
+- 使用VR控制器的触摸板/摇杆进行移动
+- 使用控制器按钮进行交互
+
+## 项目结构
+
+```
+.
+├── js/                    # JavaScript源代码
+│   ├── artwork.js         # 艺术品相关逻辑
+│   ├── controls.js        # 控制器实现
+│   ├── gallery.js         # 画廊场景管理
+│   └── main.js            # 主程序入口
+├── index.html            # 主页面
+├── package.json          # 项目配置
+└── vite.config.js        # Vite配置
+```
+
+## 贡献指南
+
+1. Fork本仓库
+2. 创建您的特性分支 (git checkout -b feature/AmazingFeature)
+3. 提交您的更改 (git commit -m 'Add some AmazingFeature')
+4. 推送到分支 (git push origin feature/AmazingFeature)
+5. 打开一个Pull Request
+
+## 许可证
+
+本项目采用MIT许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
